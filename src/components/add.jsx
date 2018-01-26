@@ -11,7 +11,9 @@ export default class Add extends React.Component {
   render() {
     return (
       <div className="add">
-        <input type="image" id="add-btn" alt="add a new div" src={add} />
+        <input type="image" id="add-btn" alt="add a new div" src={add}
+          onClick={(e) => this.props.makeNewDiv()}
+        />
       </div>
     );
   }

@@ -13,12 +13,18 @@ class App extends React.Component {
     this.state = {
       items: ['x', '2x', '3x']
     };
+
+    this.makeNewDiv = this.makeNewDiv.bind(this);
+  }
+
+  makeNewDiv() {
+    this.setState( {items: this.state.items.concat('')} );
   }
 
   render() {
     return (
       <div>
-        <Add />
+        <Add makeNewDiv={this.makeNewDiv} />
         <List items={this.state.items} />
       </div>
     );
