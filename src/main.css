@@ -3,4 +3,41 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.add {
+  background: linear-gradient(white, lightgray);
+  height: 50px;
+  border-radius: 5px;
+  width: 30%;
+  margin: 1em;
+}
+
+#add-btn {
+  width: 20px;
+  position: relative;
+  top: 1em;
+  left: 1em;
+  cursor: pointer;
+}
+
+.item {
+  border: 1px solid #222;
+  border-radius: 5px;
+  width: 30%;
+  margin: 1em;
+  height: 50px;
+}
+
+.reorder {
+  background-color: lightblue;
+  width: 10%;
+  cursor: move;
+  height: 100%;
+  display: inline-block;
+}
+
+.remove {
+  float: right;
+  cursor: pointer;
+}
+
 

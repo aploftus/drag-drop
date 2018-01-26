@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Item extends React.Component {
+export default class Item extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -8,11 +8,13 @@ class Item extends React.Component {
   render() {
     return (
       <div className="item">
-        <span>{this.props.index}</span>
+        <div className="reorder">
+          <span className="index">{this.props.index}</span>
+          <span className="toggle"></span>
+        </div>
         <span>{this.props.item}</span>
+        <span className="remove">x</span>
       </div>
     );
   }
 }
-
-export default Item;

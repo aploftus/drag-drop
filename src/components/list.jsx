@@ -1,8 +1,9 @@
 import React from 'react';
+import $ from 'jquery';
 
 import Item from './item.jsx';
 
-class List extends React.Component {
+export default class List extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -24,5 +25,3 @@ class List extends React.Component {
     );
   }
 }
-
-export default List;

@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Add extends React.Component {
+import add from '../img/add.png';
+
+export default class Add extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -9,10 +11,8 @@ class Add extends React.Component {
   render() {
     return (
       <div className="add">
-        +
+        <input type="image" id="add-btn" alt="add a new div" src={add} />
       </div>
     );
   }
 }
-
-export default Add;
