@@ -28,6 +28,16 @@ class App extends React.Component {
     this.setState( {items: this.state.items.concat('')} );
   }
 
+  removeDiv(index) {
+    let {items} = this.state;
+    if (items.length === 1) {
+      this.setState({items: ['']});
+    } else {
+      items.splice(index, 1);
+      this.setState({ items: items });
+    }
+  }
+
   onReorder(event, previousIndex, nextIndex, fromId, toId) {
     this.setState({
       items: reorder(this.state.items, previousIndex, nextIndex)
@@ -61,6 +71,7 @@ class App extends React.Component {
                   <span className="index">{index + 1}</span>
                 </div>
                 <input type="text" value={item} onChange={e => this.updateInput(index, e.target.value)} />
+                <span className="remove" onClick={e => this.removeDiv(index)}>x</span>
               </div>
             );
           }
