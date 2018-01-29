@@ -8,7 +8,7 @@ body {
   height: 50px;
   border-radius: 5px;
   width: 30%;
-  margin: 1em;
+  margin: 1em 0 0 1em;
 }
 
 #add-btn {
@@ -20,10 +20,11 @@ body {
 }
 
 .item {
+  background-color: white;
   border: 1px solid #222;
   border-radius: 5px;
   width: 30%;
-  margin: 1em;
+  margin-left: 1em;
   height: 50px;
 }
 
@@ -38,6 +39,11 @@ body {
 .remove {
   float: right;
   cursor: pointer;
+}
+
+.selected {
+  border: 3px solid black;
+  z-index: 1;
 }
 
 

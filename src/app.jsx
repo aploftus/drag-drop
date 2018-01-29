@@ -11,21 +11,27 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      items: ['x', '2x', '3x']
+      items: ['x', '2x', '3x'],
+      selectedIndex: null
     };
 
     this.makeNewDiv = this.makeNewDiv.bind(this);
+    this.selectItem = this.selectItem.bind(this);
   }
 
   makeNewDiv() {
     this.setState( {items: this.state.items.concat('')} );
   }
 
+  selectItem(index) {
+    this.setState({ selectedIndex: index });
+  }
+
   render() {
     return (
       <div>
         <Add makeNewDiv={this.makeNewDiv} />
-        <List items={this.state.items} />
+        <List items={this.state.items} selectedIndex={this.state.selectedIndex} selectItem={this.selectItem} />
       </div>
     );
   }

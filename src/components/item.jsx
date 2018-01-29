@@ -7,7 +7,13 @@ export default class Item extends React.Component {
 
   render() {
     return (
-      <div className="item">
+      <div
+        draggable="true"
+        className={`item ${this.props.selected ? 'selected' : ''}`}
+        onMouseDown={e => this.props.selectItem(this.props.index)}
+        onMouseUp={e => this.props.selectItem(null)}
+        onDragEnd={e => this.props.selectItem(null)}
+      >
         <div className="reorder">
           <span className="index">{this.props.index}</span>
           <span className="toggle"></span>

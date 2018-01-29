@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 
 import Item from './item.jsx';
 
@@ -17,6 +16,8 @@ export default class List extends React.Component {
               item={item}
               key={index}
               index={index}
+              selected={index === this.props.selectedIndex ? true : false}
+              selectItem={this.props.selectItem}
             />
           );
         }
