@@ -57,7 +57,7 @@ class App extends React.Component {
         <Reorder
           reorderId="div-list"
           placeholderClassName="placeholder"
-          holdTime={100}
+          holdTime={200}
           draggedClassName="dragged"
           onReorder={this.onReorder}
           placeholder={
