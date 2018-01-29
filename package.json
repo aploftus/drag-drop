@@ -1,19 +1,20 @@
 {
-  "name": "loftus-react-starter",
+  "name": "drag-drop-reorder",
   "version": "1.0.0",
-  "description": "starter setup for React projects",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "compile": "webpack",
     "compile-dev": "webpack -d --watch",
-    "lint": "eslint src && eslint index.js"
+    "lint": "eslint src && eslint index.js",
+    "start": "open dist/index.html"
   },
   "engines": {
-    "node": "8.9.4"
+    "node": "9.4.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aploftus/loftus-react-starter.git"
+    "url": "git+https://github.com/aploftus/drag-drop-reorder.git"
   },
   "keywords": [
     "html",
@@ -26,9 +27,9 @@
   "author": "Amy Loftus",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aploftus/loftus-react-starter/issues"
+    "url": "https://github.com/aploftus/drag-drop-reorder/issues"
   },
-  "homepage": "https://github.com/aploftus/loftus-react-starter#readme",
+  "homepage": "https://github.com/aploftus/drag-drop-reorder#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",

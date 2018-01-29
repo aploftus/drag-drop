@@ -1,8 +1,5 @@
-# loftus-react-starter
-starter setup for React projects
+# Drag, drop, and reorder
 
-Usage
----
 Setup
 ---
 Install dependencies with
@@ -11,3 +8,8 @@ Install dependencies with
 Compile ES6 with webpack
 ```npm run compile-dev```
 
+Usage
+---
+```npm start```
+
+or open `dist/index.html` in a browser window
