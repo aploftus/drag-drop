@@ -21,16 +21,23 @@ class App extends React.Component {
 
     this.makeNewDiv = this.makeNewDiv.bind(this);
     this.onReorder = this.onReorder.bind(this);
+    this.updateInput = this.updateInput.bind(this);
   }
 
   makeNewDiv() {
     this.setState( {items: this.state.items.concat('')} );
   }
 
-  onReorder (event, previousIndex, nextIndex, fromId, toId) {
+  onReorder(event, previousIndex, nextIndex, fromId, toId) {
     this.setState({
       items: reorder(this.state.items, previousIndex, nextIndex)
     });
+  }
+
+  updateInput(index, value) {
+    let {items} = this.state;
+    items[index] = value;
+    this.setState({ items: items });
   }
 
   render() {
@@ -38,13 +45,13 @@ class App extends React.Component {
       <div>
         <Add makeNewDiv={this.makeNewDiv} />
         <Reorder
-          reorderId="div-list" // Unique ID that is used internally to track this list (required)
-          placeholderClassName="placeholder" // Class name to be applied to placeholder elements (optional), defaults to 'placeholder'
-          draggedClassName="dragged" // Class name to be applied to dragged elements (optional), defaults to 'dragged'
-          lock="horizontal" // Lock the dragging direction (optional): vertical, horizontal (do not use with groups)
-          onReorder={this.onReorder} // Callback when an item is dropped (you will need this to update your state)
+          reorderId="div-list"
+          placeholderClassName="placeholder"
+          holdTime={100}
+          draggedClassName="dragged"
+          onReorder={this.onReorder}
           placeholder={
-            <div className="custom-placeholder" /> // Custom placeholder element (optional), defaults to clone of dragged element
+            <div className="custom-placeholder" />
           }
         >
           {this.state.items.map((item, index) => {
@@ -53,8 +60,7 @@ class App extends React.Component {
                 <div className="reorder">
                   <span className="index">{index + 1}</span>
                 </div>
-                <span>{item}</span>
-                <span className="remove">x</span>
+                <input type="text" value={item} onChange={e => this.updateInput(index, e.target.value)} />
               </div>
             );
           }
