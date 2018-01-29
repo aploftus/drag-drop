@@ -71,7 +71,7 @@ class App extends React.Component {
                   <span className="index">{index + 1}</span>
                 </div>
                 <input type="text" value={item} onChange={e => this.updateInput(index, e.target.value)} />
-                <span className="remove" onClick={e => this.removeDiv(index)}>x</span>
+                <span className="remove" onClick={e => this.removeDiv(index)}>remove</span>
               </div>
             );
           }
